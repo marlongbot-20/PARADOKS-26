@@ -1,0 +1,46 @@
+{
+  "daerah": "Yogyakarta",
+  "tagline": "Kota dengan cita rasa paling manis di Nusantara",
+  "deskripsi": "Sebuah kota di mana waktu terasa melambat, dan setiap hidangan menceritakan kisah tentang keraton, rakyat yang tangguh, dan kecintaan mendalam terhadap rasa manis. Filosofi Jawa yang selaras merasuk ke setiap bumbu — manis, sabar, dan penuh kelembutan.",
+  "warna": "#c8902a",
+  "eyebrow": "The Heart of Java",
+  "emoji": "🎋",
+  "hidangan": [
+    {
+      "id": "gudeg-jogja",
+      "nama": "Gudeg Nangka",
+      "kategori": "makanan-berat",
+      "deskripsi": "Nangka muda yang dimasak berjam-jam dalam santan dan gula jawa hingga berwarna cokelat gelap dan manis. Hidangan ikonik Keraton ini melambangkan kesabaran dan kelembutan budaya Jawa. Disajikan bersama telur pindang, ayam opor, dan sambal krecek.",
+      "bahan": ["Nangka muda", "Santan", "Gula jawa", "Telur", "Krecek", "Daun salam", "Lengkuas"],
+      "resep": ["Rebus nangka muda hingga empuk", "Masak dengan santan, gula jawa, dan rempah 5-6 jam", "Tambahkan telur dan krecek di 1 jam terakhir", "Sajikan dengan nasi putih dan sambal"],
+      "flavor": { "pedas": 10, "manis": 90, "gurih": 70, "asam": 20, "pahit": 5 },
+      "nutrisi": { "kalori": 220, "protein": 8, "lemak": 10, "karbohidrat": 30 },
+      "tags": ["Ikonik", "Manis", "Warisan Keraton"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfjBU0keRvwHT7nD_TvD4XLuz2NdmCNnr7Z4FAkLidvvyqGwLQs5oeYcVNg0ly_lQD3JKB3EwoOQUyoc_4Wa05uj5rquVvS175HJjyDM_hYQAMCTVIcgyJZqUb8_FibCm3E74rpp_yvfdU_FrC9_52NqxthbLH-x4iH4HnfG3LSDEE7nSoJ_nsz2EuldQ7BvZqD2CC-DIiqMwEMveyCelgTNqveDJXxTrUV4m6jSoF6JXHEIqe-7W21ijXEukvF8anP8DjgmdrpvM"
+    },
+    {
+      "id": "oseng-mercon",
+      "nama": "Oseng Mercon",
+      "kategori": "makanan-berat",
+      "deskripsi": "Kontrasi mencolok dari kota yang identik dengan manisnya gudeg: daging sapi yang dimasak dengan cabai rawit merah dalam jumlah ekstrem. 'Mercon' berarti petasan — menggambarkan ledakan rasa pedas yang menghantam langit-langit mulut.",
+      "bahan": ["Daging sapi kikil", "Cabai rawit merah", "Bawang merah", "Bawang putih", "Kecap manis"],
+      "resep": ["Rebus kikil hingga empuk", "Tumis bumbu halus hingga harum", "Masukkan cabai rawit segar dalam jumlah banyak", "Masak bersama kikil dan kecap manis"],
+      "flavor": { "pedas": 100, "manis": 20, "gurih": 60, "asam": 10, "pahit": 5 },
+      "nutrisi": { "kalori": 310, "protein": 25, "lemak": 18, "karbohidrat": 10 },
+      "tags": ["Ekstrem Pedas", "Kontras", "Lokal"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuDnJ10h0kctdqCC2UK7KGOwfw5zCz4hZdiCjezbCpo-oC8Sd91keELN7e4fWUgxdjPVTwnbLUvyKOuoIrsOEj8i91A30bXP6ftyZCcQRrC6hxvY-rG_iBT1UHKPGWV1MP22Ksyv0hBr4HY2oVORGOofFP8B_jtZOFkY1G1JmefwhWfejr4OPMc1vPGZKW4MNhXqLmvTFuFFI23xIvUVMQVM_BEqn577Qkv0c7Icukn4zMiZSPoYaIeC-kMTknMaliLbIuDzG66hlT4"
+    },
+    {
+      "id": "bakpia-pathok",
+      "nama": "Bakpia Pathok",
+      "kategori": "snack",
+      "deskripsi": "Oleh-oleh paling ikonik dari Yogyakarta: pastri kecil bulat berlapis dengan isi kacang hijau manis yang lembut. Berasal dari kawasan Pathok, bakpia telah menjadi bagian tak terpisahkan dari identitas kuliner Jogja sejak berabad lalu.",
+      "bahan": ["Tepung terigu", "Kacang hijau", "Gula pasir", "Minyak sayur", "Wijen"],
+      "resep": ["Buat adonan kulit dua lapis (basah dan kering)", "Masak isian kacang hijau dengan gula", "Bentuk bulat, isi, lalu pipihkan", "Panggang hingga kecokelatan"],
+      "flavor": { "pedas": 0, "manis": 85, "gurih": 40, "asam": 5, "pahit": 0 },
+      "nutrisi": { "kalori": 180, "protein": 5, "lemak": 7, "karbohidrat": 28 },
+      "tags": ["Oleh-oleh", "Manis", "Snack"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuANM3xz3bAusFFtnXpNDonK0piyunBCLkgpYd_shOYmwPAnCJztLuPbmPjM8anlBrcR35JyneFp0Tnl7aM1nyt6etTPN6mrlGJ66avFmo9v0cj0Foq-Qq2FSDP15HdQu34o2YjT6se98PAX2k84_PIzFl4-Cz0BT03EyZUDOs9sJFEKZy0Fdb4Um5yPS9P1Eg5mdDBkCA2OxgBWHS66hiw7tzlN9d6wDiBfMo62WMqyd7mcLGMbmrFBp071AEkNFmrepc86tvWxpKQ"
+    }
+  ]
+}

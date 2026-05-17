@@ -1,0 +1,36 @@
+{
+  "kalori_comparison": [
+    { "nama": "Oseng Mercon (Jogja)", "kalori": 310, "warna": "#c8902a", "region": "yogyakarta" },
+    { "nama": "Ayam Taliwang (NTB)",  "kalori": 280, "warna": "#1a5c4a", "region": "ntb" },
+    { "nama": "Gudeg Nangka (Jogja)", "kalori": 220, "warna": "#c8902a", "region": "yogyakarta" },
+    { "nama": "Pempek (Sumsel)",      "kalori": 185, "warna": "#c84c22", "region": "sumsel" },
+    { "nama": "Bakpia Pathok (Jogja)","kalori": 180, "warna": "#c8902a", "region": "yogyakarta" },
+    { "nama": "Pindang Patin (Sumsel)","kalori": 120,"warna": "#c84c22", "region": "sumsel" },
+    { "nama": "Tekwan (Sumsel)",      "kalori": 140, "warna": "#c84c22", "region": "sumsel" },
+    { "nama": "Beberuk Terong (NTB)", "kalori": 60,  "warna": "#1a5c4a", "region": "ntb" },
+    { "nama": "Plecing Kangkung (NTB)","kalori": 45, "warna": "#1a5c4a", "region": "ntb" }
+  ],
+  "flavor_heatmap": [
+    {
+      "region": "Yogyakarta",
+      "warna_region": "#c8902a",
+      "scores": { "manis": 65, "pedas": 37, "gurih": 60, "asam": 12, "pahit": 3 }
+    },
+    {
+      "region": "Sumatera Selatan",
+      "warna_region": "#c84c22",
+      "scores": { "manis": 37, "pedas": 47, "gurih": 78, "asam": 78, "pahit": 10 }
+    },
+    {
+      "region": "Nusa Tenggara Barat",
+      "warna_region": "#1a5c4a",
+      "scores": { "manis": 15, "pedas": 82, "gurih": 57, "asam": 40, "pahit": 22 }
+    }
+  ],
+  "fun_facts": [
+    { "icon": "local_fire_department", "text": "Gudeg Jogja memiliki skor manis 90/100 — tertinggi dari seluruh dataset." },
+    { "icon": "water_drop",            "text": "Pempek Palembang memiliki skor asam 90/100 — kombinasi asam + gurih yang tak tertandingi." },
+    { "icon": "eco",                   "text": "Plecing Kangkung NTB hanya 45 kcal/100g — hidangan paling ringan di seluruh eksplorasi." },
+    { "icon": "bolt",                  "text": "NTB memiliki rata-rata skor pedas tertinggi (82/100) — jauh melampaui dua daerah lainnya." }
+  ]
+}

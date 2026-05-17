@@ -1,0 +1,90 @@
+/* =============================================
+   CULINARY JOURNEY — region.js
+   Shared script for yogyakarta.html,
+   sumatera-selatan.html, nusa-tenggara-barat.html
+   Fetches JSON data, renders dish cards, modal
+   ============================================= */
+
+'use strict';
+
+let regionData = null;
+
+async function loadRegionData() {
+  // Determine which JSON to load from data-region attribute on body
+  const region = document.body.dataset.region;
+  const jsonMap = {
+    yogyakarta:         '../data/yogyakarta.json',
+    'sumatera-selatan': '../data/sumatera-selatan.json',
+    'nusa-tenggara-barat': '../data/nusa-tenggara-barat.json',
+  };
+  const url = jsonMap[region];
+  if (!url) return;
+
+  const res  = await fetch(url);
+  regionData = await res.json();
+  renderDishGrid(regionData.hidangan);
+}
+
+function flavorBarHTML(label, pct, isHot = false) {
+  const cls = isHot ? 'flavor-bar__fill--hot' : '';
+  return `
+    <div class="flavor-bar">
+      <span class="flavor-bar__label">${label}</span>
+      <div class="flavor-bar__track">
+        <div class="flavor-bar__fill ${cls}" style="width:0%" data-target="${pct}%"></div>
+      </div>
+    </div>`;
+}
+
+function cardHTML(dish, regionColor) {
+  const f = dish.flavor;
+  // Pick top 3 flavor bars for card preview
+  const entries = Object.entries(f).sort((a, b) => b[1] - a[1]).slice(0, 3);
+  const bars = entries.map(([key, val]) =>
+    flavorBarHTML(key.charAt(0).toUpperCase() + key.slice(1), val, key === 'pedas')
+  ).join('');
+
+  return `
+    <article class="dish-card reveal" data-kategori="${dish.kategori}"
+             data-id="${dish.id}" tabindex="0" role="button"
+             aria-label="Lihat detail ${dish.nama}">
+      <div class="dish-card__img-wrap">
+        <img src="${dish.img}" alt="${dish.nama}" loading="lazy" />
+      </div>
+      <div class="dish-card__body">
+        <span class="dish-card__tag" style="color:${regionColor}; border-color:${regionColor};">
+          ${dish.tags[0]}
+        </span>
+        <h3 class="dish-card__title">${dish.nama}</h3>
+        <div class="dish-card__flavor-bars">${bars}</div>
+      </div>
+    </article>`;
+}
+
+function renderDishGrid(hidangan) {
+  const grid = document.getElementById('dish-grid');
+  if (!grid) return;
+  const color = regionData.warna;
+  grid.innerHTML = hidangan.map(d => cardHTML(d, color)).join('');
+
+  // Animate flavor bars after render
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.flavor-bar__fill').forEach(el => {
+      setTimeout(() => { el.style.width = el.dataset.target; }, 300);
+    });
+  });
+
+  // Attach click handlers
+  grid.querySelectorAll('.dish-card').forEach(card => {
+    const openCard = () => {
+      const id = card.dataset.id;
+      const dish = hidangan.find(d => d.id === id);
+      if (dish) openModal(dish, color);
+    };
+    card.addEventListener('click', openCard);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openCard(); });
+  });
+}
+
+/* ── Init ── */
+document.addEventListener('DOMContentLoaded', loadRegionData);

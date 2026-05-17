@@ -1,0 +1,46 @@
+{
+  "daerah": "Nusa Tenggara Barat",
+  "tagline": "Tanah Bumbu di Ujung Sunda Kecil",
+  "deskripsi": "Di Lombok, pedas bukan sekadar bumbu — ia adalah identitas. Ayam Taliwang dan Plecing Kangkung bukan hanya makanan, tapi pernyataan budaya masyarakat Sasak yang tangguh. NTB memiliki rata-rata skor pedas tertinggi dari tiga daerah: 8.5/10.",
+  "warna": "#1a5c4a",
+  "eyebrow": "The Spice Frontier",
+  "emoji": "🌊",
+  "hidangan": [
+    {
+      "id": "ayam-taliwang",
+      "nama": "Ayam Taliwang",
+      "kategori": "makanan-berat",
+      "deskripsi": "Hidangan paling ikonis dari Lombok: ayam kampung bakar atau goreng yang dibalur bumbu rempah dengan dominasi cabai rawit dan terasi. Nama 'Taliwang' berasal dari sebuah desa di Lombok Barat. Pedas, gurih, dan smoky — trilogi sempurna.",
+      "bahan": ["Ayam kampung", "Cabai rawit", "Terasi", "Bawang putih", "Kencur", "Tomat", "Gula merah"],
+      "resep": ["Belah ayam jadi dua, bakar setengah matang", "Haluskan bumbu, masak hingga matang", "Balur ayam dengan bumbu, panggang/goreng", "Sajikan panas dengan plecing kangkung"],
+      "flavor": { "pedas": 90, "manis": 20, "gurih": 75, "asam": 30, "pahit": 10 },
+      "nutrisi": { "kalori": 280, "protein": 28, "lemak": 16, "karbohidrat": 12 },
+      "tags": ["Ikonik", "Pedas", "Bakar"],
+      "img": "https://images.unsplash.com/photo-1555126634-323283e090fa?w=800&q=80"
+    },
+    {
+      "id": "plecing-kangkung",
+      "nama": "Plecing Kangkung",
+      "kategori": "makanan-berat",
+      "deskripsi": "Kangkung rebus segar yang disiram sambal tomat merah-merah menggebu dengan cabai yang melimpah. Hidangan ini sederhana namun meledak rasanya. Yang mengejutkan: Plecing Kangkung memiliki kalori paling rendah dari seluruh dataset — hanya 45 kcal/100g.",
+      "bahan": ["Kangkung segar", "Tomat merah", "Cabai merah", "Cabai rawit", "Terasi", "Garam", "Jeruk limau"],
+      "resep": ["Rebus kangkung sebentar, tiriskan", "Haluskan tomat, cabai, terasi", "Sajikan kangkung dingin disiram sambal segar", "Peras jeruk limau di atasnya"],
+      "flavor": { "pedas": 85, "manis": 10, "gurih": 50, "asam": 40, "pahit": 20 },
+      "nutrisi": { "kalori": 45, "protein": 3, "lemak": 2, "karbohidrat": 7 },
+      "tags": ["Segar", "Rendah Kalori", "Vegan"],
+      "img": "https://images.unsplash.com/photo-1516901408698-e77b86b35f60?w=800&q=80"
+    },
+    {
+      "id": "beberuk-terong",
+      "nama": "Beberuk Terong",
+      "kategori": "snack",
+      "deskripsi": "Lalap terong khas Sasak yang disajikan mentah atau setengah matang dengan sambal pedas tomat dan kacang panjang. Kurang dikenal tapi sangat autentik. Beberuk adalah bukti bahwa NTB menghargai kesegaran bahan-bahan lokal.",
+      "bahan": ["Terong ungu", "Kacang panjang", "Tomat", "Cabai rawit", "Bawang merah", "Terasi", "Garam"],
+      "resep": ["Iris terong dan kacang panjang", "Haluskan bumbu: tomat, cabai, terasi", "Campur sayuran dengan bumbu", "Sajikan segar sebagai pendamping nasi"],
+      "flavor": { "pedas": 70, "manis": 15, "gurih": 45, "asam": 50, "pahit": 35 },
+      "nutrisi": { "kalori": 60, "protein": 2, "lemak": 1, "karbohidrat": 11 },
+      "tags": ["Autentik Sasak", "Segar", "Lokal"],
+      "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
+    }
+  ]
+}

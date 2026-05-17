@@ -1,0 +1,46 @@
+{
+  "daerah": "Sumatera Selatan",
+  "tagline": "Warisan Sungai Musi dalam setiap gigitan",
+  "deskripsi": "Pempek lahir di tepi Sungai Musi. Ikan, cuka, dan cabai — tiga bahan sederhana yang menciptakan kombinasi rasa paling kompleks di Nusantara: asam tinggi, pedas sedang, gurih kuat. Sumatera Selatan membuktikan bahwa kesederhanaan bisa menjadi kemewahan.",
+  "warna": "#c84c22",
+  "eyebrow": "The Rich Waters",
+  "emoji": "🌶️",
+  "hidangan": [
+    {
+      "id": "pempek-palembang",
+      "nama": "Pempek Palembang",
+      "kategori": "makanan-berat",
+      "deskripsi": "Raja kuliner Palembang yang telah dikenal dunia. Olahan ikan tenggiri yang dicampur tepung sagu dan digoreng, lalu disajikan dengan kuah cuka hitam manis-pedas yang disebut cuko. Skor asam tertinggi dari seluruh dataset: 9/10.",
+      "bahan": ["Ikan tenggiri", "Tepung sagu", "Telur", "Cuka", "Cabai rawit", "Gula merah", "Ebi"],
+      "resep": ["Giling ikan tenggiri halus", "Campur dengan sagu dan bumbu", "Bentuk sesuai jenis (kapal selam, lenjer)", "Goreng atau rebus, sajikan dengan cuko"],
+      "flavor": { "pedas": 50, "manis": 60, "gurih": 80, "asam": 90, "pahit": 5 },
+      "nutrisi": { "kalori": 185, "protein": 12, "lemak": 6, "karbohidrat": 26 },
+      "tags": ["Ikonik", "Asam", "Internasional"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuAX0Qw9JzbSRBgLfY8heZVqeK-7OOmEyizvKvjnhLHqKGRKQ_hCqwhMSW5BZAgiZzwRjXEuYZHfWNrRxQs3XbYTRPzgFFQOhyVEUMRraz8gRYePRMpy2XcwAHUElum3RrIB-t2iLjwuWud01csSUINMAalJQcZRDZCjOaHjUQfeSftVNLIcUwdWGeehHXtdZGKOIkG2oHY4-58M85UMAQINNU1lzKdhCoetYKsnRwXPZNkCsLltSugPkRabg-7Q1MLsx12nTBwfvzA"
+    },
+    {
+      "id": "tekwan",
+      "nama": "Tekwan",
+      "kategori": "makanan-berat",
+      "deskripsi": "Saudara pempek yang lebih berkuah: bola-bola ikan halus disajikan dalam kaldu udang yang bening dan kaya rempah. Ditambahkan bengkuang, jamur kuping, dan soun. Otentik, lokal, dan jarang dikenal di luar Palembang.",
+      "bahan": ["Ikan tenggiri", "Udang", "Bengkuang", "Jamur kuping", "Soun", "Seledri"],
+      "resep": ["Buat adonan ikan seperti pempek, cetak kecil-kecil", "Rebus kaldu udang dengan bumbu rempah", "Masukkan bola ikan, bengkuang, jamur, soun", "Sajikan panas dengan taburan seledri"],
+      "flavor": { "pedas": 30, "manis": 30, "gurih": 85, "asam": 60, "pahit": 10 },
+      "nutrisi": { "kalori": 140, "protein": 14, "lemak": 4, "karbohidrat": 18 },
+      "tags": ["Autentik", "Berkuah", "Lokal"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuAX0Qw9JzbSRBgLfY8heZVqeK-7OOmEyizvKvjnhLHqKGRKQ_hCqwhMSW5BZAgiZzwRjXEuYZHfWNrRxQs3XbYTRPzgFFQOhyVEUMRraz8gRYePRMpy2XcwAHUElum3RrIB-t2iLjwuWud01csSUINMAalJQcZRDZCjOaHjUQfeSftVNLIcUwdWGeehHXtdZGKOIkG2oHY4-58M85UMAQINNU1lzKdhCoetYKsnRwXPZNkCsLltSugPkRabg-7Q1MLsx12nTBwfvzA"
+    },
+    {
+      "id": "pindang-patin",
+      "nama": "Pindang Patin",
+      "kategori": "makanan-berat",
+      "deskripsi": "Sup ikan patin asam pedas khas Palembang yang menggunakan campuran tomat, nanas, dan cabai untuk menciptakan kuah bening yang segar dan kompleks. Hidangan yang mencerminkan warisan kuliner tepi Sungai Musi.",
+      "bahan": ["Ikan patin", "Tomat", "Nanas", "Cabai merah", "Belimbing wuluh", "Kemangi"],
+      "resep": ["Bersihkan ikan patin, potong sesuai selera", "Didihkan air, masukkan bumbu halus", "Tambahkan tomat, nanas, belimbing wuluh", "Masukkan ikan, masak hingga matang, taburi kemangi"],
+      "flavor": { "pedas": 60, "manis": 20, "gurih": 70, "asam": 85, "pahit": 15 },
+      "nutrisi": { "kalori": 120, "protein": 18, "lemak": 5, "karbohidrat": 8 },
+      "tags": ["Segar", "Asam-Pedas", "Sungai Musi"],
+      "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuAX0Qw9JzbSRBgLfY8heZVqeK-7OOmEyizvKvjnhLHqKGRKQ_hCqwhMSW5BZAgiZzwRjXEuYZHfWNrRxQs3XbYTRPzgFFQOhyVEUMRraz8gRYePRMpy2XcwAHUElum3RrIB-t2iLjwuWud01csSUINMAalJQcZRDZCjOaHjUQfeSftVNLIcUwdWGeehHXtdZGKOIkG2oHY4-58M85UMAQINNU1lzKdhCoetYKsnRwXPZNkCsLltSugPkRabg-7Q1MLsx12nTBwfvzA"
+    }
+  ]
+}

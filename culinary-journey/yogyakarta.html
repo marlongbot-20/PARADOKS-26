@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yogyakarta: The Soul of Java — Culinary Journey</title>
+  <meta name="description" content="Jelajahi kuliner ikonik Yogyakarta: Gudeg Nangka, Oseng Mercon, dan Bakpia Pathok beserta profil rasa dan data nutrisinya." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body data-region="yogyakarta">
+  <!-- Reading Progress -->
+  <div id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+  <div class="batik-texture" aria-hidden="true"></div>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Culinary Journey</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="yogyakarta.html" class="active">Yogyakarta</a></li>
+        <li><a href="sumatera-selatan.html">Sumsel</a></li>
+        <li><a href="nusa-tenggara-barat.html">NTB</a></li>
+        <li><a href="insight.html">Insight</a></li>
+      </ul>
+      <a href="index.html" class="navbar__back" aria-label="Kembali ke halaman beranda">
+        <span class="material-symbols-outlined" style="font-size:1rem;">arrow_back</span>
+        Kembali
+      </a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="navbar__mobile-menu" id="mobile-menu">
+    <a href="index.html">Beranda</a>
+    <a href="yogyakarta.html">🎋 Yogyakarta</a>
+    <a href="sumatera-selatan.html">🌶️ Sumatera Selatan</a>
+    <a href="nusa-tenggara-barat.html">🌊 Nusa Tenggara Barat</a>
+    <a href="insight.html">📊 Data & Insight</a>
+  </div>
+
+  <main>
+    <!-- ── REGION HEADER ── -->
+    <section class="region-header container">
+      <span class="region-header__eyebrow text-label reveal" style="color:#c8902a;">🎋 The Heart of Java</span>
+      <h1 class="text-display region-header__title reveal reveal--delay-1">Yogyakarta</h1>
+      <p class="region-header__desc reveal reveal--delay-2">
+        Sebuah kota di mana waktu melambat dan setiap hidangan menceritakan kisah tentang keraton, rakyat yang tangguh, dan kecintaan mendalam terhadap rasa manis. Filosofi Jawa yang selaras merasuk ke setiap bumbu.
+      </p>
+
+      <!-- Fun fact data callout -->
+      <div class="reveal reveal--delay-2"
+           style="display:inline-flex; gap:1rem; padding:1rem 1.5rem; border:1px solid #c8902a44; background-color:var(--color-surface-container-lowest); margin-bottom:2.5rem;">
+        <span class="material-symbols-outlined" style="color:#c8902a;">insights</span>
+        <p style="font-size:0.875rem; color:var(--color-on-surface-variant); line-height:1.5;">
+          Gudeg Jogja memiliki skor manis <strong style="color:#c8902a;">90/100</strong> — tertinggi dari seluruh dataset. Kontras dengan Oseng Mercon: pedas <strong style="color:#c84c22;">100/100</strong>.
+        </p>
+      </div>
+
+      <div class="region-header__divider reveal">
+        <div class="region-header__divider-line"></div>
+        <span class="material-symbols-outlined region-header__divider-icon">local_florist</span>
+        <span class="material-symbols-outlined region-header__divider-icon">local_florist</span>
+        <span class="material-symbols-outlined region-header__divider-icon">local_florist</span>
+        <div class="region-header__divider-line"></div>
+      </div>
+    </section>
+
+    <!-- ── FILTER TABS ── -->
+    <section class="container" style="margin-top:2.5rem;">
+      <div class="filter-tabs" role="tablist" aria-label="Filter hidangan">
+        <button class="filter-tab active" data-filter="semua" role="tab" aria-selected="true">Semua</button>
+        <button class="filter-tab" data-filter="makanan-berat" role="tab" aria-selected="false">Makanan Berat</button>
+        <button class="filter-tab" data-filter="snack" role="tab" aria-selected="false">Snack / Oleh-oleh</button>
+      </div>
+
+      <!-- Dish Grid (populated by region.js) -->
+      <div class="dish-grid" id="dish-grid" data-stagger aria-label="Daftar hidangan Yogyakarta">
+        <!-- Cards injected by JS -->
+        <div style="grid-column:1/-1; text-align:center; padding:4rem 0; color:var(--color-on-surface-variant);">
+          <span class="material-symbols-outlined" style="font-size:2rem; display:block; margin-bottom:1rem;">hourglass_empty</span>
+          Memuat hidangan…
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NAVIGATE TO OTHER REGIONS ── -->
+    <section class="section container" aria-label="Navigasi ke daerah lain">
+      <div class="batik-divider" aria-hidden="true">
+        <span class="batik-divider__line"></span>
+        <span class="batik-divider__dot"></span><span class="batik-divider__dot"></span><span class="batik-divider__dot"></span>
+        <span class="batik-divider__line"></span>
+      </div>
+      <h2 class="text-headline-md reveal" style="margin: 3rem 0 1.5rem;">Jelajahi Daerah Lain</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:1rem;" class="reveal reveal--delay-1">
+        <a href="sumatera-selatan.html" class="btn btn--outline-primary">🌶️ Sumatera Selatan</a>
+        <a href="nusa-tenggara-barat.html" class="btn btn--outline-primary">🌊 NTB</a>
+        <a href="insight.html" class="btn btn--outline-primary">📊 Data &amp; Insight</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── DISH DETAIL MODAL ── -->
+  <div class="modal-overlay" id="dish-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" style="position:relative;">
+      <button class="modal__close" id="modal-close" aria-label="Tutup detail hidangan">
+        <span class="material-symbols-outlined" style="font-size:1.125rem;">close</span>
+      </button>
+
+      <img class="modal__img" id="modal-img" src="" alt="" />
+
+      <div class="modal__body">
+        <div>
+          <span class="modal__region-tag text-label" id="modal-region-tag"></span>
+          <h2 class="modal__title" id="modal-title" style="margin-top:0.5rem;"></h2>
+          <p class="modal__desc" id="modal-desc" style="margin-top:1rem;"></p>
+        </div>
+
+        <!-- Radar Chart -->
+        <div>
+          <p class="modal__section-title">Profil Rasa (DNA Rasa)</p>
+          <div class="radar-wrap">
+            <canvas id="modal-radar" width="280" height="280" aria-label="Radar chart profil rasa hidangan"></canvas>
+          </div>
+        </div>
+
+        <!-- Nutrisi -->
+        <div>
+          <p class="modal__section-title">Nutrisi (per 100g)</p>
+          <div id="modal-nutrisi" style="display:flex; flex-direction:column; gap:10px;"></div>
+        </div>
+
+        <!-- Bahan Utama -->
+        <div>
+          <p class="modal__section-title">Bahan Utama</p>
+          <div class="chip-list" id="modal-chips"></div>
+        </div>
+
+        <!-- Resep Singkat -->
+        <div>
+          <p class="modal__section-title">Resep Singkat</p>
+          <ol id="modal-recipe" style="padding:0; list-style:none;"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__logo">Culinary Journey</div>
+      <nav class="footer__links">
+        <a href="yogyakarta.html">Yogyakarta</a>
+        <a href="sumatera-selatan.html">Sumatera Selatan</a>
+        <a href="nusa-tenggara-barat.html">NTB</a>
+        <a href="insight.html">Data &amp; Insight</a>
+      </nav>
+      <p class="footer__copy">© 2024 Culinary Journey · PARADOKS 26</p>
+    </div>
+  </footer>
+
+  <!-- Chart.js CDN (needed for radar in modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/region.js"></script>
+</body>
+</html>
