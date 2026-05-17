@@ -1,3 +1,19 @@
+---
+{
+  "id": "file_wtq47snz",
+  "filetype": "document",
+  "filename": "teori visualisasi",
+  "created_at": "2026-05-17T16:27:01.147Z",
+  "updated_at": "2026-05-17T16:27:01.147Z",
+  "meta": {
+    "location": "/",
+    "tags": [],
+    "categories": [],
+    "description": "",
+    "source": "markdown"
+  }
+}
+---
 Berikut adalah rangkuman lengkap dari materi pertemuan 1 mengenai "Pengantar Representasi Visual" beserta pertanyaan diskusi yang dapat diangkat:
 
 ### Rangkuman Materi Pertemuan 1: Pengantar Representasi Visual

@@ -1,3 +1,19 @@
+---
+{
+  "id": "file_enycnuds",
+  "filetype": "document",
+  "filename": "Laporan-Pengerjaan-Culinary-Journey",
+  "created_at": "2026-05-17T16:05:31.871Z",
+  "updated_at": "2026-05-17T16:05:31.871Z",
+  "meta": {
+    "location": "/",
+    "tags": [],
+    "categories": [],
+    "description": "",
+    "source": "markdown"
+  }
+}
+---
 LAPORAN PENGERJAAN PROJECT
 
 CULINARY JOURNEY
