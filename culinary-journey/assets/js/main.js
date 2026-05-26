@@ -67,18 +67,19 @@ function initStaggeredCards() {
   });
 }
 
-/* ── Filter Tabs ── */
 function initFilterTabs() {
   const tabContainer = document.querySelector('.filter-tabs');
   if (!tabContainer) return;
   const tabs = tabContainer.querySelectorAll('.filter-tab');
-  const cards = document.querySelectorAll('.dish-card[data-kategori]');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const filter = tab.dataset.filter;
+
+      // Pencarian kartu dipindah ke SINI agar selalu mengambil data terbaru dari region.js
+      const cards = document.querySelectorAll('.dish-card[data-kategori]');
 
       cards.forEach(card => {
         const show = filter === 'semua' || card.dataset.kategori === filter;
