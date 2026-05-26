@@ -11,11 +11,39 @@
       "nama": "Ayam Taliwang",
       "kategori": "makanan-berat",
       "deskripsi": "Hidangan paling ikonis dari Lombok: ayam kampung bakar atau goreng yang dibalur bumbu rempah dengan dominasi cabai rawit dan terasi. Nama 'Taliwang' berasal dari sebuah desa di Lombok Barat. Pedas, gurih, dan smoky — trilogi sempurna.",
-      "bahan": ["Ayam kampung", "Cabai rawit", "Terasi", "Bawang putih", "Kencur", "Tomat", "Gula merah"],
-      "resep": ["Belah ayam jadi dua, bakar setengah matang", "Haluskan bumbu, masak hingga matang", "Balur ayam dengan bumbu, panggang/goreng", "Sajikan panas dengan plecing kangkung"],
-      "flavor": { "pedas": 90, "manis": 20, "gurih": 75, "asam": 30, "pahit": 10 },
-      "nutrisi": { "kalori": 280, "protein": 28, "lemak": 16, "karbohidrat": 12 },
-      "tags": ["Ikonik", "Pedas", "Bakar"],
+      "bahan": [
+        "Ayam kampung",
+        "Cabai rawit",
+        "Terasi",
+        "Bawang putih",
+        "Kencur",
+        "Tomat",
+        "Gula merah"
+      ],
+      "resep": [
+        "Belah ayam jadi dua, bakar setengah matang",
+        "Haluskan bumbu, masak hingga matang",
+        "Balur ayam dengan bumbu, panggang/goreng",
+        "Sajikan panas dengan plecing kangkung"
+      ],
+      "flavor": {
+        "pedas": 90,
+        "manis": 20,
+        "gurih": 75,
+        "asam": 30,
+        "pahit": 10
+      },
+      "nutrisi": {
+        "kalori": 280,
+        "protein": 28,
+        "lemak": 16,
+        "karbohidrat": 12
+      },
+      "tags": [
+        "Ikonik",
+        "Pedas",
+        "Bakar"
+      ],
       "img": "https://images.unsplash.com/photo-1555126634-323283e090fa?w=800&q=80"
     },
     {
@@ -23,11 +51,39 @@
       "nama": "Plecing Kangkung",
       "kategori": "makanan-berat",
       "deskripsi": "Kangkung rebus segar yang disiram sambal tomat merah-merah menggebu dengan cabai yang melimpah. Hidangan ini sederhana namun meledak rasanya. Yang mengejutkan: Plecing Kangkung memiliki kalori paling rendah dari seluruh dataset — hanya 45 kcal/100g.",
-      "bahan": ["Kangkung segar", "Tomat merah", "Cabai merah", "Cabai rawit", "Terasi", "Garam", "Jeruk limau"],
-      "resep": ["Rebus kangkung sebentar, tiriskan", "Haluskan tomat, cabai, terasi", "Sajikan kangkung dingin disiram sambal segar", "Peras jeruk limau di atasnya"],
-      "flavor": { "pedas": 85, "manis": 10, "gurih": 50, "asam": 40, "pahit": 20 },
-      "nutrisi": { "kalori": 45, "protein": 3, "lemak": 2, "karbohidrat": 7 },
-      "tags": ["Segar", "Rendah Kalori", "Vegan"],
+      "bahan": [
+        "Kangkung segar",
+        "Tomat merah",
+        "Cabai merah",
+        "Cabai rawit",
+        "Terasi",
+        "Garam",
+        "Jeruk limau"
+      ],
+      "resep": [
+        "Rebus kangkung sebentar, tiriskan",
+        "Haluskan tomat, cabai, terasi",
+        "Sajikan kangkung dingin disiram sambal segar",
+        "Peras jeruk limau di atasnya"
+      ],
+      "flavor": {
+        "pedas": 85,
+        "manis": 10,
+        "gurih": 50,
+        "asam": 40,
+        "pahit": 20
+      },
+      "nutrisi": {
+        "kalori": 45,
+        "protein": 3,
+        "lemak": 2,
+        "karbohidrat": 7
+      },
+      "tags": [
+        "Segar",
+        "Rendah Kalori",
+        "Vegan"
+      ],
       "img": "https://images.unsplash.com/photo-1516901408698-e77b86b35f60?w=800&q=80"
     },
     {
@@ -35,12 +91,161 @@
       "nama": "Beberuk Terong",
       "kategori": "snack",
       "deskripsi": "Lalap terong khas Sasak yang disajikan mentah atau setengah matang dengan sambal pedas tomat dan kacang panjang. Kurang dikenal tapi sangat autentik. Beberuk adalah bukti bahwa NTB menghargai kesegaran bahan-bahan lokal.",
-      "bahan": ["Terong ungu", "Kacang panjang", "Tomat", "Cabai rawit", "Bawang merah", "Terasi", "Garam"],
-      "resep": ["Iris terong dan kacang panjang", "Haluskan bumbu: tomat, cabai, terasi", "Campur sayuran dengan bumbu", "Sajikan segar sebagai pendamping nasi"],
-      "flavor": { "pedas": 70, "manis": 15, "gurih": 45, "asam": 50, "pahit": 35 },
-      "nutrisi": { "kalori": 60, "protein": 2, "lemak": 1, "karbohidrat": 11 },
-      "tags": ["Autentik Sasak", "Segar", "Lokal"],
+      "bahan": [
+        "Terong ungu",
+        "Kacang panjang",
+        "Tomat",
+        "Cabai rawit",
+        "Bawang merah",
+        "Terasi",
+        "Garam"
+      ],
+      "resep": [
+        "Iris terong dan kacang panjang",
+        "Haluskan bumbu: tomat, cabai, terasi",
+        "Campur sayuran dengan bumbu",
+        "Sajikan segar sebagai pendamping nasi"
+      ],
+      "flavor": {
+        "pedas": 70,
+        "manis": 15,
+        "gurih": 45,
+        "asam": 50,
+        "pahit": 35
+      },
+      "nutrisi": {
+        "kalori": 60,
+        "protein": 2,
+        "lemak": 1,
+        "karbohidrat": 11
+      },
+      "tags": [
+        "Autentik Sasak",
+        "Segar",
+        "Lokal"
+      ],
       "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80"
+    },
+    {
+      "id": "sate-rembiga",
+      "nama": "Sate Rembiga",
+      "kategori": "makanan-berat",
+      "deskripsi": "Sate daging sapi khas Rembiga, Mataram. Dagingnya direndam dengan bumbu manis, pedas, dan ketumbar sebelum dibakar. Tanpa saus kacang pun, rasanya sudah meresap kuat hingga ke serat terdalam daging.",
+      "bahan": [
+        "Daging sapi",
+        "Cabai merah",
+        "Bawang putih",
+        "Ketumbar",
+        "Gula merah",
+        "Kecap manis",
+        "Asam jawa"
+      ],
+      "resep": [
+        "Potong daging sapi kecil-kecil",
+        "Haluskan bumbu dan tumis hingga harum",
+        "Rendam daging dalam bumbu selama minimal 2 jam",
+        "Tusuk daging dan bakar hingga matang"
+      ],
+      "flavor": {
+        "pedas": 75,
+        "manis": 80,
+        "gurih": 85,
+        "asam": 20,
+        "pahit": 15
+      },
+      "nutrisi": {
+        "kalori": 250,
+        "protein": 22,
+        "lemak": 14,
+        "karbohidrat": 8
+      },
+      "tags": [
+        "Manis Pedas",
+        "Olahan Daging",
+        "Ikonik"
+      ],
+      "img": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80"
+    },
+    {
+      "id": "nasi-balap-puyung",
+      "nama": "Nasi Balap Puyung",
+      "kategori": "makanan-berat",
+      "deskripsi": "Nasi bungkus daun pisang asal Desa Puyung dengan lauk suwiran daging ayam bumbu pedas, kedelai goreng, dan kelapa parut. Ukurannya mungil, namun ledakan pedas ayam suwirnya sangat menyengat dan menguji nyali.",
+      "bahan": [
+        "Nasi putih",
+        "Daging ayam",
+        "Cabai rawit",
+        "Kedelai goreng",
+        "Kelapa parut",
+        "Bawang merah",
+        "Terasi"
+      ],
+      "resep": [
+        "Suwir ayam yang sudah direbus",
+        "Tumis bumbu halus bersama suwiran ayam hingga kering dan pedas",
+        "Goreng kedelai hingga renyah",
+        "Sajikan ayam, kedelai, dan kelapa parut di atas nasi panas"
+      ],
+      "flavor": {
+        "pedas": 95,
+        "manis": 10,
+        "gurih": 80,
+        "asam": 5,
+        "pahit": 15
+      },
+      "nutrisi": {
+        "kalori": 320,
+        "protein": 18,
+        "lemak": 12,
+        "karbohidrat": 35
+      },
+      "tags": [
+        "Ekstra Pedas",
+        "Cepat Saji Lokal",
+        "Gurih"
+      ],
+      "img": "https://images.unsplash.com/photo-1626079979728-661da3671ce7?w=800&q=80"
+    },
+    {
+      "id": "sayur-ares",
+      "nama": "Sayur Ares",
+      "kategori": "makanan-berat",
+      "deskripsi": "Hidangan berkuah santan kental yang terbuat dari pelepah (batang) pisang muda. Sering disajikan saat acara adat begawe. Rasanya sangat gurih, kaya rempah, dan menjadi penyeimbang sempurna untuk hidangan Sasak yang tajam.",
+      "bahan": [
+        "Pelepah pisang muda",
+        "Santan kelapa",
+        "Bawang merah",
+        "Bawang putih",
+        "Kunyit",
+        "Kemiri",
+        "Ketumbar",
+        "Kaldu sapi"
+      ],
+      "resep": [
+        "Iris tipis pelepah pisang, remas dengan garam untuk membuang getah",
+        "Haluskan bumbu kuning dan tumis hingga wangi",
+        "Masukkan pelepah pisang dan tuang santan",
+        "Masak perlahan hingga batang pisang empuk dan bumbu meresap"
+      ],
+      "flavor": {
+        "pedas": 30,
+        "manis": 20,
+        "gurih": 90,
+        "asam": 10,
+        "pahit": 25
+      },
+      "nutrisi": {
+        "kalori": 150,
+        "protein": 3,
+        "lemak": 10,
+        "karbohidrat": 12
+      },
+      "tags": [
+        "Berkuah Santan",
+        "Unik",
+        "Tradisional"
+      ],
+      "img": "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&q=80"
     }
   ]
 }
