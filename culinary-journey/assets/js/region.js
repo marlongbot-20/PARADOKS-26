@@ -15,7 +15,7 @@ async function loadRegionData() {
   const jsonMap = {
     yogyakarta: './data/yogyakarta.json',
     'sumatera-selatan': './data/sumatera-selatan.json',
-    'nusa-tenggara-barat': './data/nusa-tenggara-barat.json',
+    'nusa-tenggara-barat': '/data/nusa-tenggara-barat.json',
   };
   const url = jsonMap[region];
   if (!url) return;
