@@ -13,9 +13,9 @@ async function loadRegionData() {
   // Determine which JSON to load from data-region attribute on body
   const region = document.body.dataset.region;
   const jsonMap = {
-    'yogyakarta': '/data/yogyakarta.json',
-    'sumatera-selatan': '/data/sumatera-selatan.json',
-    'nusa-tenggara-barat': '/data/nusa-tenggara-barat.json',
+    'yogyakarta': 'data/yogyakarta.json',
+    'sumatera-selatan': 'data/sumatera-selatan.json',
+    'nusa-tenggara-barat': 'data/nusa-tenggara-barat.json',
   };
   const url = jsonMap[region];
   if (!url) return;
