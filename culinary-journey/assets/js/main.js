@@ -67,18 +67,19 @@ function initStaggeredCards() {
   });
 }
 
-/* ── Filter Tabs ── */
 function initFilterTabs() {
   const tabContainer = document.querySelector('.filter-tabs');
   if (!tabContainer) return;
   const tabs = tabContainer.querySelectorAll('.filter-tab');
-  const cards = document.querySelectorAll('.dish-card[data-kategori]');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       const filter = tab.dataset.filter;
+
+      // Pencarian kartu dipindah ke SINI agar selalu mengambil data terbaru dari region.js
+      const cards = document.querySelectorAll('.dish-card[data-kategori]');
 
       cards.forEach(card => {
         const show = filter === 'semua' || card.dataset.kategori === filter;
@@ -104,8 +105,22 @@ function openModal(data, regionColor) {
   const overlay = document.getElementById('dish-modal');
   if (!overlay) return;
 
-  overlay.querySelector('#modal-img').src     = data.img;
-  overlay.querySelector('#modal-img').alt     = data.nama;
+  const modalImg = overlay.querySelector('#modal-img');
+  
+  // PERBAIKAN: Penanganan Gambar Rusak (Fallback Image)
+  // Menghapus listener lama (jika ada)
+  modalImg.onerror = null; 
+  // Jika gambar gagal dimuat, ganti dengan gambar default yang aman
+  modalImg.onerror = function() {
+    this.onerror = null; // Cegah infinite loop
+    this.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80'; // Gambar makanan generik/placeholder
+    this.alt = 'Gambar tidak tersedia';
+  };
+  
+  // Inisialisasi gambar utama
+  modalImg.src = data.img;
+  modalImg.alt = data.nama;
+  
   overlay.querySelector('#modal-title').textContent  = data.nama;
   overlay.querySelector('#modal-desc').textContent   = data.deskripsi;
   overlay.querySelector('#modal-region-tag').textContent = data.tags.join(' · ');

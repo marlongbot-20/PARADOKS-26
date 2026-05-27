@@ -12,11 +12,14 @@ let regionData = null;
 async function loadRegionData() {
   // Determine which JSON to load from data-region attribute on body
   const region = document.body.dataset.region;
+  
+  // PERBAIKAN 1: Menghapus awalan '/' atau '../' agar path menjadi relatif
   const jsonMap = {
-    yogyakarta:         '../data/yogyakarta.json',
-    'sumatera-selatan': '../data/sumatera-selatan.json',
-    'nusa-tenggara-barat': '../data/nusa-tenggara-barat.json',
+    'yogyakarta':         'data/yogyakarta.json',
+    'sumatera-selatan': 'data/sumatera-selatan.json',
+    'nusa-tenggara-barat': 'data/nusa-tenggara-barat.json',
   };
+  
   const url = jsonMap[region];
   if (!url) return;
 
@@ -67,10 +70,16 @@ function renderDishGrid(hidangan) {
   const color = regionData.warna;
   grid.innerHTML = hidangan.map(d => cardHTML(d, color)).join('');
 
-  // Animate flavor bars after render
+  // Animate flavor bars and cards after render
   requestAnimationFrame(() => {
+    // Animasi bar rasa
     grid.querySelectorAll('.flavor-bar__fill').forEach(el => {
       setTimeout(() => { el.style.width = el.dataset.target; }, 300);
+    });
+    
+    // PERBAIKAN 2: Paksa kartu untuk muncul perlahan secara berurutan
+    grid.querySelectorAll('.dish-card').forEach((card, i) => {
+      setTimeout(() => card.classList.add('visible'), i * 100);
     });
   });
 
