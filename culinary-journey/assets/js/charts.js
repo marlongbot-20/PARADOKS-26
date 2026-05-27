@@ -8,7 +8,8 @@
 
 /* ── Calorie Bar Chart ── */
 async function renderCalorieChart() {
-  const res  = await fetch('../data/insight.json');
+  // PERBAIKAN: Path JSON disesuaikan
+  const res  = await fetch('data/insight.json');
   const data = await res.json();
   const items = data.kalori_comparison.sort((a, b) => b.kalori - a.kalori);
   const container = document.getElementById('calorie-chart');
@@ -28,7 +29,7 @@ async function renderCalorieChart() {
       </div>
     </div>
   `).join('') + `
-    <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-margin-top:12px;">
       <div style="width:160px;"></div>
       <div style="flex:1;border-top:1px solid var(--color-outline-variant);padding-top:8px;display:flex;justify-content:space-between;">
         <span class="text-chart text-outline">0 kcal</span>
@@ -47,7 +48,8 @@ async function renderCalorieChart() {
 
 /* ── Flavor Heatmap ── */
 async function renderHeatmap() {
-  const res  = await fetch('../data/insight.json');
+  // PERBAIKAN: Path JSON disesuaikan
+  const res  = await fetch('data/insight.json');
   const data = await res.json();
   const rows = data.flavor_heatmap;
   const container = document.getElementById('heatmap-table');
@@ -58,7 +60,6 @@ async function renderHeatmap() {
 
   // Compute intensity → background color (monochromatic tonal)
   function heatColor(regionColor, score) {
-    // score 0–100, lighter = lower intensity (toward background)
     const alpha = 0.1 + (score / 100) * 0.8;
     return `${regionColor}${Math.round(alpha * 255).toString(16).padStart(2,'0')}`;
   }
@@ -88,7 +89,8 @@ async function renderHeatmap() {
 
 /* ── Fun Facts ── */
 async function renderFunFacts() {
-  const res  = await fetch('../data/insight.json');
+  // PERBAIKAN: Path JSON disesuaikan
+  const res  = await fetch('data/insight.json');
   const data = await res.json();
   const container = document.getElementById('fun-facts');
   if (!container) return;
@@ -105,7 +107,8 @@ async function renderFunFacts() {
 async function renderRadarOverlay() {
   const canvas = document.getElementById('radar-overlay');
   if (!canvas || !window.Chart) return;
-  const res  = await fetch('../data/insight.json');
+  // PERBAIKAN: Path JSON disesuaikan
+  const res  = await fetch('data/insight.json');
   const data = await res.json();
   const rows = data.flavor_heatmap;
   const dims = ['manis', 'pedas', 'gurih', 'asam', 'pahit'];
