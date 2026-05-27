@@ -105,8 +105,22 @@ function openModal(data, regionColor) {
   const overlay = document.getElementById('dish-modal');
   if (!overlay) return;
 
-  overlay.querySelector('#modal-img').src     = data.img;
-  overlay.querySelector('#modal-img').alt     = data.nama;
+  const modalImg = overlay.querySelector('#modal-img');
+  
+  // PERBAIKAN: Penanganan Gambar Rusak (Fallback Image)
+  // Menghapus listener lama (jika ada)
+  modalImg.onerror = null; 
+  // Jika gambar gagal dimuat, ganti dengan gambar default yang aman
+  modalImg.onerror = function() {
+    this.onerror = null; // Cegah infinite loop
+    this.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80'; // Gambar makanan generik/placeholder
+    this.alt = 'Gambar tidak tersedia';
+  };
+  
+  // Inisialisasi gambar utama
+  modalImg.src = data.img;
+  modalImg.alt = data.nama;
+  
   overlay.querySelector('#modal-title').textContent  = data.nama;
   overlay.querySelector('#modal-desc').textContent   = data.deskripsi;
   overlay.querySelector('#modal-region-tag').textContent = data.tags.join(' · ');
