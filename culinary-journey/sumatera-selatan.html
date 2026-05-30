@@ -77,17 +77,33 @@
     </section>
 
     <section class="container" style="margin-top:2.5rem;">
+
       <div class="filter-tabs" role="tablist">
         <button class="filter-tab active" data-filter="semua">Semua</button>
         <button class="filter-tab" data-filter="makanan-berat">Makanan Berat</button>
         <button class="filter-tab" data-filter="snack">Snack</button>
       </div>
-      <div class="dish-grid" id="dish-grid" data-stagger>
-        <div style="grid-column:1/-1; text-align:center; padding:4rem 0; color:var(--color-on-surface-variant);">
-          <span class="material-symbols-outlined"
-            style="font-size:2rem; display:block; margin-bottom:1rem;">hourglass_empty</span>
-          Memuat hidangan…
+
+      <div class="coverflow">
+
+        <button class="coverflow-btn prev" id="prevBtn">
+          <span class="material-symbols-outlined">
+            chevron_left
+          </span>
+        </button>
+
+        <div class="coverflow-track" id="carouselTrack">
+
+          <!-- GENERATED FROM JSON -->
+
         </div>
+
+        <button class="coverflow-btn next" id="nextBtn">
+          <span class="material-symbols-outlined">
+            chevron_right
+          </span>
+        </button>
+
       </div>
     </section>
 

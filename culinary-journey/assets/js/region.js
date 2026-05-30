@@ -12,18 +12,18 @@ let regionData = null;
 async function loadRegionData() {
   // Determine which JSON to load from data-region attribute on body
   const region = document.body.dataset.region;
-  
+
   // PERBAIKAN 1: Menghapus awalan '/' atau '../' agar path menjadi relatif
   const jsonMap = {
-    'yogyakarta':         'data/yogyakarta.json',
+    'yogyakarta': 'data/yogyakarta.json',
     'sumatera-selatan': 'data/sumatera-selatan.json',
     'nusa-tenggara-barat': 'data/nusa-tenggara-barat.json',
   };
-  
+
   const url = jsonMap[region];
   if (!url) return;
 
-  const res  = await fetch(url);
+  const res = await fetch(url);
   regionData = await res.json();
   renderDishGrid(regionData.hidangan);
 }
@@ -76,7 +76,7 @@ function renderDishGrid(hidangan) {
     grid.querySelectorAll('.flavor-bar__fill').forEach(el => {
       setTimeout(() => { el.style.width = el.dataset.target; }, 300);
     });
-    
+
     // PERBAIKAN 2: Paksa kartu untuk muncul perlahan secara berurutan
     grid.querySelectorAll('.dish-card').forEach((card, i) => {
       setTimeout(() => card.classList.add('visible'), i * 100);
@@ -97,3 +97,230 @@ function renderDishGrid(hidangan) {
 
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', loadRegionData);
+/* =========================================
+   ELEMENT
+========================================= */
+
+const track = document.getElementById("carouselTrack");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const prevBtn = document.getElementById("prevBtn");
+
+/* =========================================
+   STATE
+========================================= */
+
+let foods = [];
+
+let currentIndex = 0;
+
+/* =========================================
+   LOAD JSON
+========================================= */
+
+async function loadFoods() {
+
+  try {
+
+    const response =
+      await fetch("./data/sumatera-selatan.json");
+
+    const data =
+      await response.json();
+
+    foods = data.makanan;
+
+    renderCards();
+
+    updateCoverflow();
+
+  } catch (error) {
+
+    console.error(error);
+  }
+}
+
+/* =========================================
+   RENDER CARDS
+========================================= */
+
+function renderCards() {
+
+  track.innerHTML = foods.map(food => `
+
+    <article class="food-card">
+
+      <div class="food-card__image">
+        <img src="${food.img}" alt="${food.nama}">
+      </div>
+
+      <div class="food-card__content">
+
+        <span class="food-card__category">
+          ${food.kategori}
+        </span>
+
+        <h3 class="food-card__title">
+          ${food.nama}
+        </h3>
+
+        <p class="food-card__desc">
+          ${food.deskripsi}
+        </p>
+
+        <div class="food-card__traits">
+
+          ${(food.tags || [])
+      .map(tag => `<span>${tag}</span>`)
+      .join("")}
+
+        </div>
+
+      </div>
+
+    </article>
+
+  `).join("");
+}
+
+/* =========================================
+   UPDATE COVERFLOW
+========================================= */
+
+function updateCoverflow() {
+
+  const cards =
+    document.querySelectorAll(".food-card");
+
+  cards.forEach((card, index) => {
+
+    const offset =
+      index - currentIndex;
+
+    let transform = "";
+
+    /* =========================
+       ACTIVE
+    ========================= */
+
+    if (offset === 0) {
+
+      transform = `
+        translate(-50%, -50%)
+        translateX(0)
+        rotateY(0deg)
+        scale(1)
+      `;
+
+      card.classList.add("active");
+
+      card.style.opacity = "1";
+
+      card.style.zIndex = "20";
+    }
+
+    /* =========================
+       RIGHT
+    ========================= */
+
+    else if (offset > 0) {
+
+      transform = `
+        translate(-50%, -50%)
+        translateX(${offset * 240}px)
+        rotateY(-45deg)
+        scale(${1 - offset * 0.15})
+      `;
+
+      card.classList.remove("active");
+
+      card.style.opacity =
+        Math.max(0, 1 - offset * 0.25);
+
+      card.style.zIndex =
+        10 - offset;
+    }
+
+    /* =========================
+       LEFT
+    ========================= */
+
+    else {
+
+      transform = `
+        translate(-50%, -50%)
+        translateX(${offset * 240}px)
+        rotateY(45deg)
+        scale(${1 - Math.abs(offset) * 0.15})
+      `;
+
+      card.classList.remove("active");
+
+      card.style.opacity =
+        Math.max(0, 1 - Math.abs(offset) * 0.25);
+
+      card.style.zIndex =
+        10 - Math.abs(offset);
+    }
+
+    card.style.transform = transform;
+  });
+}
+
+/* =========================================
+   NEXT
+========================================= */
+
+function nextSlide() {
+
+  currentIndex++;
+
+  if (currentIndex >= foods.length) {
+    currentIndex = 0;
+  }
+
+  updateCoverflow();
+}
+
+/* =========================================
+   PREV
+========================================= */
+
+function prevSlide() {
+
+  currentIndex--;
+
+  if (currentIndex < 0) {
+    currentIndex = foods.length - 1;
+  }
+
+  updateCoverflow();
+}
+
+/* =========================================
+   EVENTS
+========================================= */
+
+nextBtn.addEventListener("click", nextSlide);
+
+prevBtn.addEventListener("click", prevSlide);
+
+/* =========================================
+   AUTO SLIDE
+========================================= */
+
+setInterval(() => {
+
+  nextSlide();
+
+}, 5000);
+
+/* =========================================
+   START
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  loadFoods();
+});
