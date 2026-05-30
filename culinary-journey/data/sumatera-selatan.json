@@ -220,7 +220,7 @@
     {
       "id": "burgo",
       "nama": "Burgo",
-      "kategori": "makanan-ringan",
+      "kategori": "makanan-berat",
       "deskripsi": "Siasat ketahanan pangan kuno masyarakat Palembang saat paceklik atau pasokan ikan sedang menyusut. Mengadopsi teknik mengukus lembaran tepung tipis ala Chee Cheong Fun Tionghoa, dadar beras gulung ini diiris tipis lalu diguyur kuah santan putih gurih beraroma ebi dan suwiran ikan gabus.",
       "bahan": [
         "Tepung beras",
@@ -307,41 +307,6 @@
       "img": "assets/media/mie-celor.jpg"
     },
     {
-      "id": "tempoyak",
-      "nama": "Tempoyak",
-      "kategori": "kondimen",
-      "deskripsi": "Produk fermentasi tradisional khas pedalaman Sumatera Selatan sebagai bentuk kearifan lokal ketahanan pangan saat panen raya durian hutan. Daging durian difermentasi bersama garam dalam wadah kedap udara untuk menghasilkan rasa asam-gurih-pedas yang menantang.",
-      "bahan": [
-        "Daging buah durian matang lokal",
-        "Garam murni"
-      ],
-      "resep": [
-        "Pisahkan daging buah durian matang lokal dari bijinya, lalu lumatkan.",
-        "Campurkan garam murni secara merata ke dalam lumatan daging durian.",
-        "Masukkan adonan ke dalam stoples kaca atau guci keramik kedap udara.",
-        "Fermentasikan pada suhu ruang selama 3-7 hari hingga tumbuh bakteri asam laktat alami."
-      ],
-      "flavor": {
-        "pedas": 40,
-        "manis": 30,
-        "gurih": 75,
-        "asam": 95,
-        "pahit": 10
-      },
-      "nutrisi": {
-        "kalori": 150,
-        "protein": 3,
-        "lemak": 4,
-        "karbohidrat": 26
-      },
-      "tags": [
-        "Fermentasi Purba",
-        "Durian Hutan",
-        "Asam Tajam"
-      ],
-      "img": "assets/media/tempoyak.jpg"
-    },
-    {
       "id": "pindang-patin",
       "nama": "Pindang Patin",
       "kategori": "makanan-berat",
@@ -383,7 +348,7 @@
     {
       "id": "engkak-ketan",
       "nama": "Engkak Ketan",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Kue lapis tradisional legendaris khas Palembang dengan tekstur yang sangat lembut dan cita rasa manis legit yang pekat. Dahulu, kue lapis berbasis tepung ketan ini merupakan sajian khusus bangsawan Kesultanan Palembang pada hari-hari besar.",
       "bahan": [
         "Tepung ketan",
@@ -421,7 +386,7 @@
     {
       "id": "maksuba",
       "nama": "Maksuba",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Simbol kemewahan sejati dari jagat kue basah Palembang. Maksuba adalah kue lapis yang didominasi oleh penggunaan telur bebek dalam jumlah masif tanpa ampas tepung yang berarti. Menghasilkan karakteristik kue yang basah (moist), padat-lembut, dengan garis-garis lapisan karamel yang kontras.",
       "bahan": [
         "Telur bebek",
@@ -459,7 +424,7 @@
     {
       "id": "kue-delapan-jam",
       "nama": "Kue Delapan Jam",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Karya seni kuliner yang menguji batas kesabaran. Sesuai namanya, kue tradisional warisan bangsawan Kesultanan Palembang ini harus melalui proses pengukusan konstan selama delapan jam penuh untuk mengubah emulsi telur, susu, dan gula menjadi padatan kue bertekstur kenyal-lembut menyerupai spons basah.",
       "bahan": [
         "Telur bebek",
@@ -496,7 +461,7 @@
     {
       "id": "gandus",
       "nama": "Gandus",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Antitesis dari kue talam Nusantara yang umumnya manis. Gandus adalah kue basah gurih putih khas masyarakat Melayu Palembang yang sering dikonsumsi sebagai sarapan ringan. Memiliki tekstur super lembut mirip puding gurih padat berbahan dasar tepung beras dan santan.",
       "bahan": [
         "Tepung beras",
@@ -536,7 +501,7 @@
     {
       "id": "kue-kojo",
       "nama": "Kue Kojo",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Kue basah tradisional beraroma wangi daun pandan yang sangat pekat. Bertekstur padat, legit, dan basah. Karakter khas kue ini terletak pada penampilannya yang berwarna hijau tua alami dan dicetak menggunakan loyang khusus kuno berbentuk kelopak bunga kamboja.",
       "bahan": [
         "Tepung terigu",
@@ -575,7 +540,7 @@
     {
       "id": "bolu-kojo",
       "nama": "Bolu Kojo",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Inovasi teknik modern dari Kue Kojo tradisional. Menggunakan basis bahan esensial yang sama (santan dan sari daun pandan), namun komposisi pengocokan telur dan tepung disesuaikan agar adonan dapat menangkap udara sehingga menghasilkan tekstur yang lebih empuk, ringan, dan mengembang layaknya kue bolu barat.",
       "bahan": [
         "Tepung terigu",
@@ -614,7 +579,7 @@
     {
       "id": "kerupuk-amplang",
       "nama": "Kerupuk Amplang",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Camilan renyah hasil adaptasi kreatif masyarakat pesisir perairan Sumatera Selatan. Memanfaatkan kelimpahan tangkapan ikan tenggiri harian, daging ikan diolah bersama tapioka membentuk kerupuk berbentuk silinder memanjang atau bulatan kecil yang digoreng hingga merekah garing.",
       "bahan": [
         "Daging ikan tenggiri segar",
@@ -652,7 +617,7 @@
     {
       "id": "kue-pare",
       "nama": "Kue Pare",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Jajanan pasar tradisional Palembang yang menampilkan ilusi visual yang jenaka. Kue basah berbahan tepung ketan ini dibentuk menyerupai sayur pare yang guratan kulitnya bergerigi. Di balik tampilannya yang meniru buah pahit, kue ini justru menawarkan rasa manis legit dari isian unti kelapa gula merah.",
       "bahan": [
         "Tepung ketan",
@@ -691,7 +656,7 @@
     {
       "id": "kue-lumpang",
       "nama": "Kue Lumpang",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Kue basah kukus bertekstur sangat kenyal (chewy) yang sangat populer di pasar tradisional Sumatera Selatan. Penamaan kue ini didasarkan pada bentuk fisik cetakannya yang menghasilkan cekungan kosong tepat di bagian tengah kue, menyerupai lumpang (lesung batu penumbuk padi tradisional).",
       "bahan": [
         "Tepung beras",
@@ -729,7 +694,7 @@
     {
       "id": "dodol-durian-palembang",
       "nama": "Dodol Durian Palembang",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Produk hilirisasi buah tropis legendaris. Berbeda dengan lempok yang murni daging durian dan gula, Dodol Durian Palembang mengombinasikan kepekatan aroma daging durian matang lokal dengan kekenyalan tepung ketan dan gurihnya minyak santan kelapa yang dimasak secara reduktif.",
       "bahan": [
         "Daging buah durian matang",
@@ -767,7 +732,7 @@
     {
       "id": "gulo-puan",
       "nama": "Gulo Puan",
-      "kategori": "makanan-ringan",
+      "kategori": "snack",
       "deskripsi": "Kuliner langka pelipur rindu para bangsawan Kesultanan Palembang Darussalam. Gulo Puan (artinya Gula Puan/Susu) dibuat melalui proses karamelisasi lambat dari perpaduan gula pasir dan susu kerbau rawa (puan) segar asli pasokan para peternak di area rawa-lebak Pampangan, Ogan Komering Ilir (OKI). Menghasilkan tekstur berpasir yang lembut dengan rasa manis-legit yang sangat mewah.",
       "bahan": [
         "Susu kerbau rawa asli Pampangan",

@@ -112,7 +112,7 @@ const prevBtn = document.getElementById("prevBtn");
 ========================================= */
 
 let foods = [];
-
+let filteredFoods = [];
 let currentIndex = 0;
 
 /* =========================================
@@ -131,9 +131,13 @@ async function loadFoods() {
 
     foods = data.makanan;
 
-    renderCards();
+    filteredFoods = foods;
+
+    renderCards(filteredFoods);
 
     updateCoverflow();
+
+    initFilterTabs();
 
   } catch (error) {
 
@@ -145,9 +149,16 @@ async function loadFoods() {
    RENDER CARDS
 ========================================= */
 
-function renderCards() {
-
-  track.innerHTML = foods.map(food => `
+function renderCards(foodData) {
+  if (!foodData.length) {
+    track.innerHTML = `
+    <div class="empty-state">
+      Tidak ada makanan
+    </div>
+  `;
+    return;
+  }
+  track.innerHTML = foodData.map(food => `
 
     <article class="food-card">
 
@@ -185,6 +196,63 @@ function renderCards() {
 }
 
 /* =========================================
+   FILTER TAB
+========================================= */
+
+function initFilterTabs() {
+
+  const tabs =
+    document.querySelectorAll(".filter-tab");
+
+  tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+      /* =========================
+         ACTIVE BUTTON
+      ========================= */
+
+      tabs.forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+      tab.classList.add("active");
+
+      /* =========================
+         FILTER
+      ========================= */
+
+      const filter =
+        tab.dataset.filter;
+
+      if (filter === "semua") {
+
+        filteredFoods = foods;
+
+      } else {
+
+        filteredFoods =
+          foods.filter(food =>
+            food.kategori === filter
+          );
+      }
+
+      /* =========================
+         RESET INDEX
+      ========================= */
+
+      currentIndex = 0;
+
+      /* =========================
+         RE-RENDER
+      ========================= */
+
+      renderCards(filteredFoods);
+      updateCoverflow();
+    });
+  });
+}
+/* =========================================
    UPDATE COVERFLOW
 ========================================= */
 
@@ -193,36 +261,53 @@ function updateCoverflow() {
   const cards =
     document.querySelectorAll(".food-card");
 
+  const total = cards.length;
+
   cards.forEach((card, index) => {
 
-    const offset =
+    /* =========================================
+       CIRCULAR OFFSET
+    ========================================= */
+
+    let offset =
       index - currentIndex;
+
+    // Infinite circular logic
+    if (offset > total / 2) {
+      offset -= total;
+    }
+
+    if (offset < -total / 2) {
+      offset += total;
+    }
 
     let transform = "";
 
-    /* =========================
-       ACTIVE
-    ========================= */
+    /* =========================================
+       ACTIVE CARD
+    ========================================= */
 
     if (offset === 0) {
 
       transform = `
         translate(-50%, -50%)
-        translateX(0)
+        translateX(0px)
         rotateY(0deg)
         scale(1)
       `;
 
-      card.classList.add("active");
-
       card.style.opacity = "1";
 
-      card.style.zIndex = "20";
+      card.style.zIndex = "30";
+
+      card.style.filter = "blur(0px)";
+
+      card.classList.add("active");
     }
 
-    /* =========================
-       RIGHT
-    ========================= */
+    /* =========================================
+       RIGHT SIDE
+    ========================================= */
 
     else if (offset > 0) {
 
@@ -230,21 +315,24 @@ function updateCoverflow() {
         translate(-50%, -50%)
         translateX(${offset * 240}px)
         rotateY(-45deg)
-        scale(${1 - offset * 0.15})
+        scale(${1 - offset * 0.12})
       `;
 
-      card.classList.remove("active");
-
       card.style.opacity =
-        Math.max(0, 1 - offset * 0.25);
+        Math.max(0, 1 - offset * 0.2);
 
       card.style.zIndex =
-        10 - offset;
+        20 - offset;
+
+      card.style.filter =
+        `blur(${offset * 1}px)`;
+
+      card.classList.remove("active");
     }
 
-    /* =========================
-       LEFT
-    ========================= */
+    /* =========================================
+       LEFT SIDE
+    ========================================= */
 
     else {
 
@@ -252,16 +340,19 @@ function updateCoverflow() {
         translate(-50%, -50%)
         translateX(${offset * 240}px)
         rotateY(45deg)
-        scale(${1 - Math.abs(offset) * 0.15})
+        scale(${1 - Math.abs(offset) * 0.12})
       `;
 
-      card.classList.remove("active");
-
       card.style.opacity =
-        Math.max(0, 1 - Math.abs(offset) * 0.25);
+        Math.max(0, 1 - Math.abs(offset) * 0.2);
 
       card.style.zIndex =
-        10 - Math.abs(offset);
+        20 - Math.abs(offset);
+
+      card.style.filter =
+        `blur(${Math.abs(offset) * 1}px)`;
+
+      card.classList.remove("active");
     }
 
     card.style.transform = transform;
@@ -274,11 +365,9 @@ function updateCoverflow() {
 
 function nextSlide() {
 
-  currentIndex++;
-
-  if (currentIndex >= foods.length) {
-    currentIndex = 0;
-  }
+  currentIndex =
+    (currentIndex + 1)
+    % filteredFoods.length;
 
   updateCoverflow();
 }
@@ -289,11 +378,9 @@ function nextSlide() {
 
 function prevSlide() {
 
-  currentIndex--;
-
-  if (currentIndex < 0) {
-    currentIndex = foods.length - 1;
-  }
+  currentIndex =
+    (currentIndex - 1 + filteredFoods.length)
+    % filteredFoods.length;
 
   updateCoverflow();
 }

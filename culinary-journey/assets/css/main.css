@@ -564,7 +564,7 @@ main {
 .filter-tab.active {
   background-color: var(--color-primary-container);
   border-color: var(--color-primary-container);
-  color: var(--color-on-primary-container);
+  color: white;
 }
 
 /* ── Stats Row ── */
