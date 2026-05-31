@@ -804,5 +804,28 @@
       ],
       "img": "assets/media/sambal-tempoyak-tumis.jpg"
     }
+  ],
+  "hero": [
+    {
+      "title": "Pempek",
+      "desc": "Ikon kuliner Palembang dengan kuah cuko paling kompleks di Nusantara.",
+      "image": "assets/media/pempek.jpg",
+      "factTitle": "Cuko Legendaris",
+      "factText": "Cuko tradisional menggunakan gula aren dan ebi untuk menghasilkan rasa umami kuat."
+    },
+    {
+      "title": "Tekwan",
+      "desc": "Sup ikan hangat yang lahir dari budaya berkumpul masyarakat Palembang.",
+      "image": "assets/media/tekwan.jpg",
+      "factTitle": "BerkoTek samo KaWan",
+      "factText": "Nama Tekwan berasal dari ungkapan lokal yang berarti mengobrol bersama teman."
+    },
+    {
+      "title": "Kemplang",
+      "desc": "Snack ikan panggang dengan aroma smoky khas pesisir Sumatera Selatan.",
+      "image": "assets/media/kemplang.jpg",
+      "factTitle": "Dipanggang Bukan Digoreng",
+      "factText": "Kemplang tradisional dipanggang di atas bara api untuk menghasilkan aroma khas."
+    }
   ]
 }

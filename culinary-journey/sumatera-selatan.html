@@ -16,6 +16,428 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* =========================================
+   COVERFLOW
+========================================= */
+
+    .coverflow {
+      position: relative;
+
+      width: 100%;
+      height: 650px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      perspective: 1400px;
+    }
+
+    /* =========================================
+   TRACK
+========================================= */
+
+    .coverflow-track {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    /* =========================================
+   CARD
+========================================= */
+
+    .food-card {
+
+      position: absolute;
+
+      width: 340px;
+      height: 520px;
+
+      left: 50%;
+      top: 50%;
+
+      transform-style: preserve-3d;
+
+      border-radius: 2rem;
+      overflow: hidden;
+
+      background: var(--color-surface);
+
+      transition:
+        transform 0.7s ease,
+        opacity 0.7s ease,
+        filter 0.7s ease;
+
+      box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.35);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* =========================================
+   IMAGE
+========================================= */
+
+    .food-card__image {
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .food-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================================
+   CONTENT
+========================================= */
+
+    .food-card__content {
+      padding: 1.5rem;
+    }
+
+    .food-card__category {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .food-card__title {
+      margin-top: 0.5rem;
+      font-size: 1.7rem;
+    }
+
+    .food-card__desc {
+      margin-top: 1rem;
+      line-height: 1.7;
+      color: var(--color-on-surface-variant);
+    }
+
+    .food-card__traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      margin-top: 1.5rem;
+    }
+
+    .food-card__traits span {
+      padding: 0.45rem 0.8rem;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      font-size: 0.8rem;
+    }
+
+    /* =========================================
+   ACTIVE CARD
+========================================= */
+
+    .food-card.active {
+      z-index: 10;
+
+      filter: blur(0);
+
+      opacity: 1;
+    }
+
+    /* =========================================
+   BUTTON
+========================================= */
+
+    .coverflow-btn {
+
+      position: absolute;
+
+      z-index: 50;
+
+      width: 60px;
+      height: 60px;
+
+      border: none;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
+      backdrop-filter: blur(10px);
+
+      color: white;
+    }
+
+    .coverflow-btn.prev {
+      left: 2rem;
+    }
+
+    .coverflow-btn.next {
+      right: 2rem;
+    }
+
+    .coverflow-btn .material-symbols-outlined {
+      font-size: 2rem;
+    }
+
+    /* =========================================
+   REGION HERO
+========================================= */
+
+    .region-hero {
+
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+
+      gap: 4rem;
+
+      align-items: center;
+
+      min-height: 90vh;
+
+      padding-top: 6rem;
+    }
+
+    /* =========================================
+   LEFT CONTENT
+========================================= */
+
+    .region-hero__content {
+      max-width: 560px;
+    }
+
+    .region-hero__eyebrow {
+
+      display: inline-flex;
+
+      padding: 0.5rem 1rem;
+
+      border-radius: 999px;
+
+      background:
+        rgba(200, 76, 34, 0.12);
+
+      color: #c84c22;
+
+      font-size: 0.85rem;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .region-hero__title {
+
+      font-size: clamp(4rem, 8vw, 7rem);
+
+      line-height: 0.95;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .region-hero__desc {
+
+      font-size: 1.05rem;
+
+      line-height: 1.9;
+
+      color:
+        var(--color-on-surface-variant);
+
+      margin-bottom: 2rem;
+    }
+
+    /* =========================================
+   FUN FACT CARD
+========================================= */
+
+    .funfact-card {
+
+      display: flex;
+      gap: 1rem;
+
+      padding: 1.5rem;
+
+      border-radius: 1.75rem;
+
+      background:
+        rgba(255, 255, 255, 0.04);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .funfact-card__icon {
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(200, 76, 34, 0.16);
+
+      color: #c84c22;
+
+      flex-shrink: 0;
+    }
+
+    .funfact-card__label {
+
+      font-size: 0.8rem;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+      color:
+        var(--color-on-surface-variant);
+    }
+
+    .funfact-card__title {
+
+      margin-top: 0.35rem;
+
+      font-size: 1.2rem;
+    }
+
+    .funfact-card__text {
+
+      margin-top: 0.5rem;
+
+      line-height: 1.7;
+
+      color:
+        var(--color-on-surface-variant);
+    }
+
+    /* =========================================
+   HERO PANELS
+========================================= */
+
+    .hero-panels {
+
+      display: flex;
+
+      gap: 1rem;
+
+      height: 620px;
+
+      overflow: hidden;
+    }
+
+    /* =========================================
+   PANEL
+========================================= */
+
+    .hero-panel {
+
+      position: relative;
+
+      flex: 1;
+
+      border-radius: 2rem;
+
+      overflow: hidden;
+
+      cursor: pointer;
+
+      transition:
+        flex 0.7s ease,
+        transform 0.7s ease;
+
+      background-size: cover;
+      background-position: center;
+
+      min-width: 90px;
+    }
+
+    .hero-panel.active {
+      flex: 5;
+    }
+
+    /* =========================================
+   OVERLAY
+========================================= */
+
+    .hero-panel::before {
+
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(to top,
+          rgba(0, 0, 0, 0.85),
+          rgba(0, 0, 0, 0.15));
+    }
+
+    /* =========================================
+   INFO
+========================================= */
+
+    .hero-panel__info {
+
+      position: absolute;
+
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: 1.5rem;
+
+      z-index: 2;
+
+      transform:
+        translateY(20px);
+
+      opacity: 0;
+
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    .hero-panel.active .hero-panel__info {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .hero-panel__title {
+
+      font-size: 1.6rem;
+
+      font-weight: 700;
+
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-panel__desc {
+
+      line-height: 1.7;
+
+      color:
+        rgba(255, 255, 255, 0.78);
+    }
+  </style>
 </head>
 
 <body data-region="sumatera-selatan">
@@ -51,21 +473,43 @@
   </div>
 
   <main>
-    <section class="region-header container">
-      <span class="region-header__eyebrow text-label reveal" style="color:#c84c22;">🌶️ The Rich Waters</span>
-      <h1 class="text-display region-header__title reveal reveal--delay-1">Sumatera Selatan</h1>
-      <p class="region-header__desc reveal reveal--delay-2">
-        Pempek lahir di tepi Sungai Musi. Ikan, cuka, dan cabai — tiga bahan sederhana yang menciptakan kombinasi rasa
-        paling kompleks di Nusantara. Sumatera Selatan adalah daerah dengan profil rasa paling beragam: asam tinggi,
-        pedas sedang, gurih kuat.
-      </p>
-      <div class="reveal reveal--delay-2"
-        style="display:inline-flex; gap:1rem; padding:1rem 1.5rem; border:1px solid #c84c2244; background-color:var(--color-surface-container-lowest); margin-bottom:2.5rem;">
-        <span class="material-symbols-outlined" style="color:#c84c22;">water_drop</span>
-        <p style="font-size:0.875rem; color:var(--color-on-surface-variant); line-height:1.5;">
-          Pempek Palembang memiliki skor asam <strong style="color:#c84c22;">90/100</strong> — tertinggi dari seluruh
-          dataset di antara tiga daerah.
+    <section class="region-hero container">
+      <!-- LEFT CONTENT -->
+      <div class="region-hero__content reveal">
+        <span class="region-hero__eyebrow">
+          🌶️ The Rich Waters
+        </span>
+        <h1 class="region-hero__title">
+          Sumatera Selatan
+        </h1>
+        <p class="region-hero__desc">
+          Pempek lahir di tepi Sungai Musi. Ikan, cuka, dan cabai —
+          tiga bahan sederhana yang menciptakan kombinasi rasa
+          paling kompleks di Nusantara.
         </p>
+        <!-- FUN FACT -->
+        <div class="funfact-card" id="funfactCard">
+          <div class="funfact-card__icon">
+            <span class="material-symbols-outlined">
+              water_drop
+            </span>
+          </div>
+          <div class="funfact-card__content">
+            <span class="funfact-card__label">
+              Culinary Fun Fact
+            </span>
+            <h3 class="funfact-card__title" id="funfactTitle">
+              Pempek Palembang
+            </h3>
+            <p class="funfact-card__text" id="funfactText">
+              Memiliki skor asam tertinggi di antara seluruh dataset kuliner.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- RIGHT INTERACTIVE PANELS -->
+      <div class="hero-panels" id="heroPanels">
+        <!-- GENERATED BY JS -->
       </div>
       <div class="region-header__divider reveal">
         <div class="region-header__divider-line"></div>
@@ -174,6 +618,312 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/region.js"></script>
+  <script>
+    const track = document.getElementById("carouselTrack");
+
+    const nextBtn = document.getElementById("nextBtn");
+
+    const prevBtn = document.getElementById("prevBtn");
+
+    let foods = [];
+    let filteredFoods = [];
+    let currentIndex = 0;
+    let heroData = [];
+
+    async function loadFoods() {
+
+      try {
+
+        const response =
+          await fetch("./data/sumatera-selatan.json");
+
+        const data =
+          await response.json();
+
+        foods = data.makanan;
+
+        filteredFoods = foods;
+
+        renderCards(filteredFoods);
+
+        updateCoverflow();
+        heroData = data.hero;
+
+        renderHeroPanels();
+
+      } catch (error) {
+
+        console.error(error);
+      }
+    }
+
+    function renderCards(foodData) {
+      if (!foodData.length) {
+        track.innerHTML = `
+        <div class="empty-state">
+          Tidak ada makanan
+        </div>
+      `;
+        return;
+      }
+      track.innerHTML = foodData.map(food => `
+
+        <article class="food-card">
+
+          <div class="food-card__image">
+            <img src="${food.img}" alt="${food.nama}">
+          </div>
+
+          <div class="food-card__content">
+
+            <span class="food-card__category">
+              ${food.kategori}
+            </span>
+
+            <h3 class="food-card__title">
+              ${food.nama}
+            </h3>
+
+            <p class="food-card__desc">
+              ${food.deskripsi}
+            </p>
+
+            <div class="food-card__traits">
+
+              ${(food.tags || [])
+          .map(tag => `<span>${tag}</span>`)
+          .join("")}
+
+            </div>
+
+          </div>
+
+        </article>
+
+      `).join("");
+    }
+
+    function initFilterTabs() {
+
+      const tabs =
+        document.querySelectorAll(".filter-tab");
+
+      tabs.forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
+          tabs.forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+          tab.classList.add("active");
+
+          const filter =
+            tab.dataset.filter;
+
+          if (filter === "semua") {
+
+            filteredFoods = foods;
+
+          } else {
+
+            filteredFoods =
+              foods.filter(food =>
+                food.kategori === filter
+              );
+          }
+
+          currentIndex = 0;
+
+          renderCards(filteredFoods);
+          updateCoverflow();
+        });
+      });
+    }
+
+    function updateCoverflow() {
+
+      const cards =
+        document.querySelectorAll(".food-card");
+
+      const total = cards.length;
+
+      cards.forEach((card, index) => {
+
+        let offset =
+          index - currentIndex;
+
+        // Infinite circular logic
+        if (offset > total / 2) {
+          offset -= total;
+        }
+
+        if (offset < -total / 2) {
+          offset += total;
+        }
+
+        let transform = "";
+
+        if (offset === 0) {
+
+          transform = `
+            translate(-50%, -50%)
+            translateX(0px)
+            rotateY(0deg)
+            scale(1)
+          `;
+
+          card.style.opacity = "1";
+
+          card.style.zIndex = "30";
+
+          card.style.filter = "blur(0px)";
+
+          card.classList.add("active");
+        }
+
+        else if (offset > 0) {
+
+          transform = `
+            translate(-50%, -50%)
+            translateX(${offset * 240}px)
+            rotateY(-45deg)
+            scale(${1 - offset * 0.12})
+          `;
+
+          card.style.opacity =
+            Math.max(0, 1 - offset * 0.2);
+
+          card.style.zIndex =
+            20 - offset;
+
+          card.style.filter =
+            `blur(${offset * 1}px)`;
+
+          card.classList.remove("active");
+        }
+
+        else {
+
+          transform = `
+            translate(-50%, -50%)
+            translateX(${offset * 240}px)
+            rotateY(45deg)
+            scale(${1 - Math.abs(offset) * 0.12})
+          `;
+
+          card.style.opacity =
+            Math.max(0, 1 - Math.abs(offset) * 0.2);
+
+          card.style.zIndex =
+            20 - Math.abs(offset);
+
+          card.style.filter =
+            `blur(${Math.abs(offset) * 1}px)`;
+
+          card.classList.remove("active");
+        }
+
+        card.style.transform = transform;
+      });
+    }
+
+    function nextSlide() {
+
+      currentIndex =
+        (currentIndex + 1)
+        % filteredFoods.length;
+
+      updateCoverflow();
+    }
+
+    function prevSlide() {
+
+      currentIndex =
+        (currentIndex - 1 + filteredFoods.length)
+        % filteredFoods.length;
+
+      updateCoverflow();
+    }
+
+    nextBtn.addEventListener("click", nextSlide);
+
+    prevBtn.addEventListener("click", prevSlide);
+
+    setInterval(() => {
+
+      nextSlide();
+
+    }, 5000);
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      loadFoods();
+    });
+
+    const heroPanels =
+      document.getElementById("heroPanels");
+
+    function renderHeroPanels() {
+
+      heroPanels.innerHTML =
+        heroData.map((item, index) => `
+
+          <article
+            class="hero-panel ${index === 0 ? 'active' : ''}"
+            data-index="${index}"
+            style="
+              background-image:url('${item.image}')
+            "
+          >
+
+            <div class="hero-panel__info">
+
+              <h3 class="hero-panel__title">
+                ${item.title}
+              </h3>
+
+              <p class="hero-panel__desc">
+                ${item.desc}
+              </p>
+
+            </div>
+
+          </article>
+
+        `).join("");
+
+      initHeroPanels();
+    }
+
+    function initHeroPanels() {
+
+      const panels =
+        document.querySelectorAll(".hero-panel");
+
+      const funfactTitle =
+        document.getElementById("funfactTitle");
+      const funfactText =
+        document.getElementById("funfactText");
+      panels.forEach(panel => {
+        panel.addEventListener("click", () => {
+          panels.forEach(p =>
+            p.classList.remove("active")
+          );
+          panel.classList.add("active");
+          const index =
+            panel.dataset.index;
+          const data =
+            heroData[index];
+          funfactTitle.textContent =
+            data.factTitle;
+          funfactText.textContent =
+            data.factText;
+        });
+      });
+    }
+    renderHeroPanels();
+  </script>
 </body>
 
 </html>
